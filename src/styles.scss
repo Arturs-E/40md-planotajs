@@ -1,1 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+@import "assets/style/reset";
+
+* {
+  font-family: 'Roboto', sans-serif;
+  color: #444;
+}
+
+a, a:hover, a:active, a:focus {
+  text-decoration: none;
+  color: inherit;
+}
+
+.heading1 {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.heading2 {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.heading3 {
+  font-size: 22px;
+  font-weight: bold;
+}

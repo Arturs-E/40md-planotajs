@@ -1,0 +1,34 @@
+<div class="modal-window-background">
+  <div class="modal-window">
+    <form (submit)="saveEditedTask($event)">
+      <div class="modal-window__header">
+        <h3 class="heading3">Edit task</h3>
+        <app-button
+          [type]="'button'"
+          (toParentClickHandler)="closeModalWindow()"
+          [classes]="['button--with-icon']"
+        >
+          <fa-icon
+            [icon]="faWindowClose"
+          ></fa-icon>
+        </app-button>
+      </div>
+      <input
+        #editTaskInput
+        class="modal-window__input"
+        [formControl]="editTaskValue"
+      >
+      <div class="modal-window__footer">
+        <app-button
+          [type]="'button'"
+          (toParentClickHandler)="closeModalWindow()"
+          [classes]="['button--secondary']"
+        >
+          Cancel
+        </app-button>
+        <app-button [type]="'submit'">{{primaryButtonTitle}}</app-button>
+      </div>
+    </form>
+  </div>
+</div>
+

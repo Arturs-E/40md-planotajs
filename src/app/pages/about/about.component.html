@@ -1,0 +1,16 @@
+<section>
+  <h1>{{title}}</h1>
+  <app-button (toParentClickHandler)="toggleShowDescription()">Parādīt/Slēpt aprakstu</app-button>
+  <span>{{showDescription}}</span>
+
+  <div *ngIf="showDescription">
+    <span class="about-title">Apraksts: </span>
+    <span>{{about.description | uppercase}}</span>
+
+    <span class="about-title">Reitings: </span>
+    <span>{{about.rating | number: '1.0-2'}}</span>
+
+    <span class="about-title">Lapa uztaisīta: </span>
+    <span>{{about.createdAt | date: 'dd.MM.y'}}</span>
+  </div>
+</section>

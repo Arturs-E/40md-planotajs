@@ -1,0 +1,18 @@
+<label
+  [for]="title"
+  [class]="checkboxState
+  ? 'todo__filter-checkbox-label todo__filter-checkbox-label--active'
+  : 'todo__filter-checkbox-label'"
+>
+  {{title}}
+  <input
+    [id]="title"
+    type="checkbox"
+    [value]="title"
+    [checked]="checkboxState"
+    class="todo__filter-checkbox-checkbox"
+    (change)="setCheckboxState($event)"
+  >
+  <span class="todo__filter-checkbox-checkmark"></span>
+</label>
+

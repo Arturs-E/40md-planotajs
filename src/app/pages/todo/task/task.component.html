@@ -1,0 +1,23 @@
+<div class="todo__task-item">
+  <fa-icon
+    [icon]="faCheck"
+    (click)="setComplete()"
+    class="todo__task-item-icon todo__task-item-icon--complete"
+    [class]="task.completed ? 'todo__task-item-icon--complete-active' : ''"
+  ></fa-icon>
+  <div>
+    <span
+      class="todo__task-item-task"
+      [class]="task.completed ? 'todo__task-item--completed' : ''"
+    >
+      {{task.taskName}}
+    </span>
+  </div>
+  <fa-icon
+    [icon]="faEdit"
+    (click)="openEditModalWindow()"
+    class="todo__task-item-icon todo__task-item-icon--edit"
+  ></fa-icon>
+  <fa-icon [icon]="faTrash" (click)="removeTask()" class="todo__task-item-icon todo__task-item-icon--delete"></fa-icon>
+</div>
+

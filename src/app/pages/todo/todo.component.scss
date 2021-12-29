@@ -1,0 +1,19 @@
+.todo-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 30px 15px;
+}
+
+.todo-wrapper {
+  padding: 45px;
+  border: 1px solid #EBEBEB;
+  box-shadow: 0 4px 15px rgba(44, 44, 44, 0.05);
+  border-radius: 12px;
+}
+
+.todo {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 36px;
+  margin-bottom: 54px;
+}

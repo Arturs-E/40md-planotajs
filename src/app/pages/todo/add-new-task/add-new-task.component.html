@@ -1,0 +1,5 @@
+<form class="new-task-form" (submit)="sendFormData($event)">
+  <input #newTaskId type="text" name="new-task-name" [formControl]="newTaskValue" class="new-task-form__input">
+  <app-button [type]="buttonType">{{buttonTitle}}</app-button>
+</form>
+

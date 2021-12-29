@@ -1,0 +1,30 @@
+<div class="todo-container">
+  <div class="todo-wrapper">
+    <div class="todo">
+      <h2 class="heading2">To-do list</h2>
+      <app-add-new-task [tasks]="tasks" (formSubmission)="addNewTask($event)"></app-add-new-task>
+      <div style="place-self: center center">
+        <app-filter-checkbox
+          [title]="'Only completed'"
+          [checkboxState]="filterCheckboxState.onlyActive"
+          (toParentClickHandler)="setCheckboxState($event)"
+        ></app-filter-checkbox>
+      </div>
+      <app-task
+        *ngFor="let task of showFilteredTasks()"
+        [task]="task"
+        (toParentChangeCompletedState)="changeCompletedState($event)"
+        (toParentRemoveTask)="deleteTask($event)"
+        (toParentOpenEditModalWindow)="openEditModalWindow($event)"
+      ></app-task>
+      <app-modal-window
+        *ngIf="showEditModalWindow"
+        [task]="taskToEdit"
+        [primaryButtonTitle]="'Save'"
+        (toParentCloseModalWindow)="closeEditModalWindow()"
+        (toParentFormSubmission)="updateEditedTask($event)"
+      ></app-modal-window>
+    </div>
+  </div>
+</div>
+
