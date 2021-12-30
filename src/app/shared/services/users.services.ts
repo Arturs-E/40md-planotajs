@@ -19,6 +19,12 @@ export class UsersServices {
       name: 'Urmas',
       surname: 'Sokk',
       country: CountryCodeType.EE
+    },
+    {
+      id: idGenerator(),
+      name: 'Jonas',
+      surname: 'Varnas',
+      country: CountryCodeType.LT
     }
   ]
 
