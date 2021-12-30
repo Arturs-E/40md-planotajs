@@ -17,7 +17,9 @@ export class TodoComponent implements OnInit {
     onlyActive: false,
   }
 
-  constructor(public todoServices: TodoServices) {
+  constructor(
+    private todoServices: TodoServices,
+  ) {
     this.tasks = this.todoServices.tasks;
   }
 

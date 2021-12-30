@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Task } from '../models/todo.model';
 import { v4 as uuidv4 } from 'uuid';
-import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -17,10 +16,6 @@ export class TodoServices {
   ]
 
   constructor() { }
-
-  getTasks(): Task[] {
-    return this.tasks;
-  }
 
   addTask(task: Task): Task[] {
     this.tasks.push(task);
