@@ -1,11 +1,15 @@
+<div class="add-user-button-wrapper">
+  <app-button (toParentClickHandler)="goToAddUserPage()">Add new user</app-button>
+</div>
+
 <table *ngIf="users">
   <tr>
     <th *ngFor="let title of tableHeadTitles">{{title}}</th>
   </tr>
   <tr *ngFor="let user of users">
     <td>{{user.id}}</td>
-    <td>{{user.name}}</td>
-    <td>{{user.surname}}</td>
+    <td>{{user.name | titlecase}}</td>
+    <td>{{user.surname | titlecase}}</td>
     <td>{{user.country | uppercase}}</td>
   </tr>
 </table>

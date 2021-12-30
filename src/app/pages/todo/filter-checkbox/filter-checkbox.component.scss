@@ -36,10 +36,7 @@
 
   &__filter-checkbox-checkmark {
     position: absolute;
-    //display: flex;
-    //justify-content: center;
-    //align-items: center;
-    top: 5px;
+    top: 3px;
     left: 5px;
     height: 17px;
     width: 17px;
@@ -65,10 +62,10 @@
   }
 
   &__filter-checkbox-label &__filter-checkbox-checkmark:after {
-    left: 4px;
+    left: 5px;
     top: 1px;
-    width: 7px;
-    height: 11px;
+    width: 4px;
+    height: 9px;
     border: solid #28a745;
     border-width: 0 3px 3px 0;
     -webkit-transform: rotate(45deg);

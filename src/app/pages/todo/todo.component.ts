@@ -1,12 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { v4 as uuidv4 } from 'uuid';
-
-export type Task = {
-  id: string;
-  taskName: string;
-  completed: boolean;
-}
+import { Task } from '../../shared/models/todo.model';
+import { TodoServices } from '../../shared/services/todo.services';
 
 @Component({
   selector: 'app-todo',
@@ -21,26 +17,24 @@ export class TodoComponent implements OnInit {
     onlyActive: false,
   }
 
-  constructor() { }
+  constructor(public todoServices: TodoServices) {
+    this.tasks = this.todoServices.tasks;
+  }
 
   ngOnInit(): void {
   }
 
   addNewTask(formData: FormControl) {
-    this.tasks.push({id: uuidv4(), taskName: formData.value.toLowerCase(), completed: false});
+    this.tasks = this.todoServices
+      .addTask({id: uuidv4(), taskName: formData.value.toLowerCase(), completed: false});
   }
 
   changeCompletedState(id: string) {
-    this.tasks = this.tasks.map((task) => {
-      if (task.id === id) {
-        return {...task, completed: !task.completed}
-      }
-      return task;
-    });
+    this.tasks = this.todoServices.changeTaskCompletedState(id);
   }
 
   deleteTask(id: string) {
-    this.tasks = this.tasks.filter((task) => task.id !== id);
+    this.tasks = this.todoServices.deleteTask(id);
   }
 
   openEditModalWindow(task: Task) {
@@ -53,12 +47,7 @@ export class TodoComponent implements OnInit {
   }
 
   updateEditedTask(task: Task) {
-    this.tasks = this.tasks.map((item) => {
-      if (item.id === task.id) {
-        return task;
-      }
-      return item;
-    })
+    this.tasks = this.todoServices.updateTask(task);
   }
 
   setCheckboxState(value: boolean) {

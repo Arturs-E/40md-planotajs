@@ -1,6 +1,6 @@
 import { Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { faWindowClose } from '@fortawesome/free-solid-svg-icons';
-import { Task } from '../todo.component';
+import { Task } from '../../../shared/models/todo.model'
 import { FormControl } from '@angular/forms';
 
 @Component({

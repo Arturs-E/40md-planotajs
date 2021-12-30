@@ -10,7 +10,9 @@ import { UsersServices } from '../../shared/services/users.services';
 export class UsersComponent implements OnInit {
   users?: User[];
 
-  constructor(private usersService: UsersServices) { }
+  constructor(
+    private usersService: UsersServices,
+  ) { }
 
   ngOnInit(): void {
     this.users = this.usersService.getUsers();

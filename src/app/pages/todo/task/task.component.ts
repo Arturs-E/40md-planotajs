@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { faCheck, faEdit, faTrash } from '@fortawesome/free-solid-svg-icons';
-import { Task } from '../todo.component';
+import { Task } from '../../../shared/models/todo.model'
 
 @Component({
   selector: 'app-task',

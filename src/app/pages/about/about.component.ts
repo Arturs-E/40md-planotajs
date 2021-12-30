@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./about.component.scss']
 })
 export class AboutComponent {
-  title = '40md-lekcija';
+  title = '40md-planner';
 
   about = {
     createdAt: '2011-10-05T14:48:00.000Z',

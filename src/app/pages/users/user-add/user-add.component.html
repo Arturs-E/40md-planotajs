@@ -1,28 +1,40 @@
-<form [formGroup]="addUserForm">
-  <label for="showCountryCheckbox">Parādīt valsts izvēlni</label>
-  <input type="checkbox" id="showCountryCheckbox" [(ngModel)]="showCountrySelect" [ngModelOptions]="{standalone: true}">
-  <span>{{showCountrySelect}}</span>
+<form [formGroup]="addUserForm" (submit)="addUser($event)" class="form form--add-user">
+  <label class="label">
+    Show country selection
+    <input type="checkbox" [(ngModel)]="showCountrySelect" [ngModelOptions]="{standalone: true}">
+    <span class="checkmark"></span>
+  </label>
 
-  <div>
-    <label for="name">Vārds</label>
-    <input type="text" id="name" formControlName="name">
+  <div class="form__input-wrapper">
+    <label for="name" class="form__label">Name</label>
+    <input type="text" id="name" formControlName="name" class="form__input">
   </div>
 
-  <div>
-    <label for="surname">Uzvārds</label>
-    <input type="text" id="surname" formControlName="surname">
+  <div class="form__input-wrapper">
+    <label for="surname" class="form__label">Surname</label>
+    <input type="text" id="surname" formControlName="surname" class="form__input">
   </div>
 
-  <div *ngIf="showCountrySelect">
-    <label for="country">Valsts</label>
-    <select name="" id="country" formControlName="country">
+  <div *ngIf="showCountrySelect" class="form__input-wrapper">
+    <label for="country" class="form__label">Country</label>
+    <select name="" id="country" formControlName="country" class="form__input">
       <option value="lv">LV</option>
       <option value="lt">LT</option>
       <option value="ee">EE</option>
     </select>
   </div>
 
-  <button type="button" (click)="addUser()" [disabled]="addUserForm.invalid">Pievienot</button>
+  <div class="add-user-button-wrapper">
+    <app-button (toParentClickHandler)="goToPreviousPage()" [classes]="['button--secondary']">Go back</app-button>
+    <app-button
+      [type]="'submit'"
+      [disabled]="addUserForm.invalid"
+    >
+      Add user
+    </app-button>
+  </div>
 </form>
 
-<span>{{addUserForm.value | json}}</span>
+<!--<span>{{addUserForm.value | json}}</span>-->
+
+

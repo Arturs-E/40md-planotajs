@@ -8,6 +8,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 export class ButtonComponent implements OnInit {
   @Input() type?: string;
   @Input() classes?: string[];
+  @Input() disabled?: boolean;
 
   @Output() toParentClickHandler = new EventEmitter();
 

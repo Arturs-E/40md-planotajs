@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './pages/about/about.component';
 import { UsersComponent } from './pages/users/users.component';
 import { TodoComponent } from './pages/todo/todo.component';
+import { UserAddComponent } from './pages/users/user-add/user-add.component';
 
 const routes: Routes = [
   {
@@ -22,6 +23,10 @@ const routes: Routes = [
     //     path: ':id',
     //   }
     // ]
+  },
+  {
+    path: 'users/add-user',
+    component: UserAddComponent,
   },
   {
     path: 'todo',

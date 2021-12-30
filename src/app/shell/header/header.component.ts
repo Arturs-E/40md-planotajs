@@ -9,15 +9,15 @@ export class HeaderComponent implements OnInit {
   menu = [
     {
       path: 'users',
-      title: 'Lietotāji'
+      title: 'Users'
     },
     {
       path: 'todo',
-      title: 'Plānotājs'
+      title: 'To-do List'
     },
     {
       path: 'about',
-      title: 'Par'
+      title: 'About'
     }
   ]
 

@@ -9,10 +9,16 @@ import { v4 as idGenerator } from 'uuid';
 export class UsersServices {
   users: User[] = [
     {
-      id: 'skyhfnbidhhmsaw',
+      id: idGenerator(),
       name: 'Jānis',
       surname: 'Bērzinš',
       country: CountryCodeType.LV
+    },
+    {
+      id: idGenerator(),
+      name: 'Urmas',
+      surname: 'Sokk',
+      country: CountryCodeType.EE
     }
   ]
 

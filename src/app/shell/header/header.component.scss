@@ -1,12 +1,14 @@
 .header {
-  background-color: lightgrey;
-  padding: 10px 20px;
+  max-width: 1000px;
+  margin: 0 auto 24px;
+  padding: 5px 5px 0;
   display: flex;
   flex-direction: row;
-  gap: 10px;
-  justify-content: space-between;
+  gap: 48px;
+  justify-content: left;
   align-items: center;
   flex-wrap: wrap;
+  border-bottom: 1px solid #28a745;
 }
 
 .links {
@@ -15,19 +17,28 @@
 }
 
 .link {
-  padding: 10px;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 20px 30px;
   cursor: pointer;
   border-bottom: 1px solid transparent;
 
   &:hover {
-    border-bottom: 1px solid deeppink;
+    color: #28a745;
   }
 }
 
 .active {
-  border-bottom: 1px solid dodgerblue;
+  background-color: #28a745;
+  color: #fff;
+
+  &:hover {
+    color: #fff;
+  }
 }
 
 .logo {
-
+  font-size: 18px;
+  font-weight: 500;
+  padding: 10px;
 }
