@@ -1,6 +1,6 @@
 <h2 class="heading2" style="margin-bottom: 36px">Add new user</h2>
 <form [formGroup]="addUserForm" (submit)="addUser($event)" class="form form--add-user">
-  <label class="label">
+  <label class="label" [style]="showCountrySelect ? 'background-color: #28a74525' : ''">
     Show country selection
     <input type="checkbox" [(ngModel)]="showCountrySelect" [ngModelOptions]="{standalone: true}">
     <span class="checkmark"></span>
