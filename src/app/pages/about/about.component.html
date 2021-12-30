@@ -1,22 +1,22 @@
 <section>
   <h1 class="heading1" style="margin-bottom: 36px">{{title}}</h1>
   <app-button (toParentClickHandler)="toggleShowDescription()">
-    Parādīt/Slēpt aprakstu
+    Show / hide description
   </app-button>
 
   <div *ngIf="showDescription" class="description-wrapper">
     <div class="description">
-      <span class="about-title">Apraksts: </span>
+      <span class="about-title">Description: </span>
       <span>{{about.description | uppercase}}</span>
     </div>
 
     <div class="description">
-      <span class="about-title">Reitings: </span>
+      <span class="about-title">Rating: </span>
       <span>{{about.rating | number: '1.0-2'}}</span>
     </div>
 
     <div class="description">
-      <span class="about-title">Lapa uztaisīta: </span>
+      <span class="about-title">Page created: </span>
       <span>{{about.createdAt | date: 'dd.MM.y'}}</span>
     </div>
   </div>
