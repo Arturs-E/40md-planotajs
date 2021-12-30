@@ -2,3 +2,10 @@
   font-weight: bold;
   color: deeppink;
 }
+
+.description-wrapper {
+  margin: 18px 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 6px;
+}
