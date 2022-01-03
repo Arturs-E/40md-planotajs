@@ -1,19 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UsersServices } from '../../../shared/services/users.services';
 import { Router } from '@angular/router';
 import { User } from '../../../shared/models/user.model';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-user-edit',
   templateUrl: './user-edit.component.html',
   styleUrls: ['./user-edit.component.scss']
 })
-export class UserEditComponent implements OnInit {
+export class UserEditComponent implements OnInit, OnDestroy {
   editUserForm: FormGroup = new FormGroup({});
   user?: User;
   userId!: string;
+  routeSubscription?: Subscription;
 
   constructor(
     private fb: FormBuilder,
@@ -23,9 +25,13 @@ export class UserEditComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.route.params.subscribe(params => {(this.userId) = params['userId'];});
+    this.routeSubscription = this.route.params.subscribe(params => {(this.userId) = params['userId'];});
     this.user = this.usersService.getUser(this.userId);
     this.buildForm();
+  }
+
+  ngOnDestroy() {
+    this.routeSubscription?.unsubscribe();
   }
 
   buildForm(): void {
