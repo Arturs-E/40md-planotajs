@@ -40,4 +40,22 @@ export class UsersServices {
     this.users.push(newUser);
     return this.users;
   }
+
+  editUser(query: User) {
+    this.users = this.users.map((user) => {
+      if (query.id === user.id) {
+        return query;
+      }
+      return user;
+    })
+  }
+
+  deleteUser(id: string): User[]  {
+    this.users = this.users.filter((user) => user.id !== id);
+    return this.users;
+  }
+
+  getUser(id: string): User | undefined {
+    return this.users.find((user) => user.id === id);
+  }
 }

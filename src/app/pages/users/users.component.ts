@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { AddUserQuery, User } from '../../shared/models/user.model';
 import { UsersServices } from '../../shared/services/users.services';
 
@@ -20,6 +20,10 @@ export class UsersComponent implements OnInit {
 
   addUser(query: AddUserQuery): void {
     this.users = this.usersService.addUser(query);
+  }
+
+  deleteUser(id: string): void {
+    this.users = this.usersService.deleteUser(id);
   }
 
 }

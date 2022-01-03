@@ -1,7 +1,3 @@
 <div class="content-container">
-  <app-user-list [users]="users"></app-user-list>
+  <app-user-list [users]="users" (deleteUserEvent)="deleteUser($event)"></app-user-list>
 </div>
-
-<!--<div class="content-container">-->
-<!--  <app-user-add (addUserEvent)="addUser($event)"></app-user-add>-->
-<!--</div>-->

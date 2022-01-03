@@ -1,0 +1,36 @@
+<h2 class="heading2" style="margin-bottom: 36px">Edit user</h2>
+<form [formGroup]="editUserForm" (submit)="saveChanges($event)" class="form form--add-user">
+  <div class="form__input-wrapper">
+    <label for="name" class="form__label">Name</label>
+    <input type="text" id="name" formControlName="name" class="form__input">
+  </div>
+
+  <div class="form__input-wrapper">
+    <label for="surname" class="form__label">Surname</label>
+    <input type="text" id="surname" formControlName="surname" class="form__input">
+  </div>
+
+  <div class="form__input-wrapper">
+    <label for="country" class="form__label">Country</label>
+    <select name="" id="country" formControlName="country" class="form__input">
+      <option value="lv">LV</option>
+      <option value="lt">LT</option>
+      <option value="ee">EE</option>
+    </select>
+  </div>
+
+  <div class="add-user-button-wrapper">
+    <app-button (toParentClickHandler)="goToPreviousPage()" [classes]="['button--secondary']">Go back</app-button>
+    <app-button
+      [type]="'submit'"
+      [disabled]="editUserForm.invalid"
+    >
+      Save
+    </app-button>
+  </div>
+</form>
+
+<span>{{editUserForm.value | json}}</span>
+
+
+

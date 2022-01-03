@@ -17,6 +17,7 @@ import { ModalWindowComponent } from './pages/todo/modal-window/modal-window.com
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { TaskComponent } from './pages/todo/task/task.component';
 import { ButtonComponent } from './shell/button/button.component';
+import { UserEditComponent } from './pages/users/user-edit/user-edit.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { ButtonComponent } from './shell/button/button.component';
     ModalWindowComponent,
     TaskComponent,
     ButtonComponent,
+    UserEditComponent,
   ],
   imports: [
     BrowserModule,

@@ -33,3 +33,22 @@ th {
   text-align: center;
 }
 
+.list-item-icon {
+  padding: 3px;
+  cursor: pointer;
+  font-size: 18px;
+
+  &--edit:hover {
+    color: darkorange;
+  }
+
+  &--delete:hover {
+    color: red;
+  }
+}
+
+.user-list-icon-cell {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
