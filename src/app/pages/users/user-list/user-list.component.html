@@ -11,9 +11,11 @@
     <td>{{user.name | titlecase}}</td>
     <td>{{user.surname | titlecase}}</td>
     <td>{{user.country | uppercase}}</td>
-    <td class="user-list-icon-cell">
-      <fa-icon [icon]="faEdit" (click)="goToEditUserPage(user.id)" class="list-item-icon list-item-icon--edit"></fa-icon>
-      <fa-icon [icon]="faTrash" (click)="deleteUser(user.id)" class="list-item-icon list-item-icon--delete"></fa-icon>
+    <td>
+      <div class="user-list-icon-cell">
+        <fa-icon [icon]="faEdit" (click)="goToEditUserPage(user.id)" class="list-item-icon list-item-icon--edit"></fa-icon>
+        <fa-icon [icon]="faTrash" (click)="deleteUser(user.id)" class="list-item-icon list-item-icon--delete"></fa-icon>
+      </div>
     </td>
   </tr>
 </table>
