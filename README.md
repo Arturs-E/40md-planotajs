@@ -1,4 +1,11 @@
-# 40mdLekcija
+# To-do list / User list in Angular
+
+You can view the project here - https://arturs-e.github.io/40md-planotajs/
+
+The task was to create a user list with options to add new users, delete and edit them. Additionaly we had to incorporate previously
+created To-Do List section.
+
+---
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.2.
 
