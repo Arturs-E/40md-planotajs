@@ -2,7 +2,7 @@
 
 You can view the project here - https://arturs-e.github.io/40md-planotajs/
 
-The task was to create a user list with options to add new users, delete and edit them. Additionaly we had to incorporate previously
+The task was to create a user list with options to add new users, delete and edit them. Additionally, we had to incorporate previously
 created To-Do List section.
 
 ---
